@@ -1,0 +1,111 @@
+.Emergency_contact{
+    position: relative;
+    z-index: 1;
+    &::before,&::after{
+        background-image: url(../img/banner/emergency_1.jpg);
+        content: '';
+        width: 50%;
+        top: 0;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+    &::before{
+        left: 0;
+        top: 0;
+    }
+    &::after{
+        right: 0;
+        top: 0;
+        background-image: url(../img/banner/emergency_2.jpg);
+    }
+    .Emergency_contact_inner{
+        padding: 100px 0;
+        position: relative;
+        z-index: 1;
+        &::before,&::after{
+            background-color: rgba(0, 171, 231,.8);
+            content: '';
+            width: 50%;
+            top: 0;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            @media #{$mobile_device} {
+                width: 100%;
+            }
+        }
+        &::before{
+            left: 0;
+            top: 0;
+        }
+        &::after{
+            right: 0;
+            top: 0;
+            background-color: rgba(0, 113, 253,.8);
+        }
+        .single_emergency{
+            position: relative;
+            z-index: 87;
+            @media #{$mobile_device}{
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+                -webkit-box-pack: start !important;
+                -ms-flex-pack: start !important;
+                    justify-content: start !important;
+            }
+            .icon {
+                font-size: 100px;
+                line-height: 1;
+                color: #fff;
+                margin-right: 40px;
+                @media #{$mobile_device} {
+                    font-size: 45px;
+                    margin-right: 10px;
+                }
+            }
+            .info{
+              
+                span{
+                    display: block;
+                    font-size: 18px;
+                    color: #fff;
+                    margin-bottom: 4px;
+                    font-family: $font1;
+                    @media #{$mobile_device}{
+                        font-size: 15px;
+                    }
+                }
+                h3{
+                    color: #fff;
+                    font-size: 50px;
+                    font-weight: 600;
+                    @media #{$mobile_device} {
+                        font-size: 30px;
+                    }
+                }
+            }
+            .info_button{
+                @media #{$mobile_device}{
+                    margin-bottom: 30px;
+                }
+                a{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+.single_emergency.align-items-center.d-flex.justify-content-end {
+    @media #{$tablet_device} {
+        
+        -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: start !important;
+    margin-top: 37px;
+    }   
+
+}

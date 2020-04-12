@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<section class="blog-details-section spad">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-lg-7 "><!--left-blog-pad-->
+                <div class="popup_box">  <!--bd-text-->
+                    <div class="popup_inner">
+                        <h3>
+                            <span>Donate</span>
+                            </h3>
+                        
+                        <!-- Map Section Begin -->
+                        <div class="map">
+                        <h4>Scan the QR Code below or click <a href="https://www.pmindia.gov.in/en/?query" style="color: red;">here</a> to Donate to PM-CARES Fund</h4>
+                        <br>
+                        <img src="{{url_for('static',filename='frame.png')}}" alt="">
+                        <br>
+                       <br>
+                       <h4>Wish to donate some more ? Go to <a href="https://amnesty.org.in/support-indias-most-vulnerable-fight-covid-19-a-list-of-fundraisers-you-can-donate-to/" style="color: red;">https://amnesty.org.in</a> to donate to an organization of your choice !</h4>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Map Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="fs-logo">
+                        <div class="logo">
+                            <a href="./index.html"><img src="img/contagion.png" height="50" width="50" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

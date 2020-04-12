@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Specer Template">
+    <meta name="keywords" content="Specer, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HotSpot Tracker</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ht-info">
+                            <ul>
+                                <li><a href="#">Sign in</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="./index.html"><img src="img/contagion.png" height="50" width="50" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="nav-menu">
+                            <ul class="main-menu">
+                                <li><a href="./home.html">Home</a></li>   
+                                <li><a href="./vol.html">Volunteering</a></li>  
+                                <li><a href="./blood.html">Donate Blood</a></li>  
+                                <li><a href="./donate.html">Donate Funds</a></li> 
+                                <li><a href="./hotspot_map.html">Track Hotspots</a></li>
+                            </ul>
+                            <div class="nm-right search-switch">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-open">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Map Section Begin -->
+    <div id="map" style="height: 600px; width: 100%;">
+        <!-- <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.271618925628!2d-73.6794031851738!3d41.019313126695636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29772c9aecd8b%3A0x7bb929f83bd76a38!2sBetsy%20Brown%20Rd%2C%20Rye%2C%20NY%2010573%2C%20USA!5e0!3m2!1sen!2sbd!4v1580843692833!5m2!1sen!2sbd"
+            height="500" style="border:0;" allowfullscreen=""></iframe> -->
+    </div>
+    <!-- Map Section End -->
+
+    <!-- Contact Section Begin -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="fs-logo">
+                        <div class="logo">
+                            <a href="./index.html"><img src="img/contagion.png" height="50" width="50" alt=""></a>
+                        </div>
+                        <ul>
+                            <li><i class="fa fa-envelope"></i> abc.xyzb@gmail.com</li>
+                            <li><i class="fa fa-copy"></i> +91 123 456 7890</li>
+                            <li><i class="fa fa-thumb-tack"></i> Mumbai, Maharashatra</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="fa fa-close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- BLOOD DONATE MAP ANIKET -->
+    <script>
+
+		// Districts along with their latitude and longitude
+		var districts = ['MUMBAI', 'PUNE', 'THANE', 'SANGLI', 'AHMEDNAGAR', 'NAGPUR', 'AURANGABAD', 'BULDANA', 'AKOLA', 'LATUR']
+		var latitude = [19.076090, 18.516726, 19.218330, 16.867634, 19.101053, 21.146633, 19.901054, 20.536846, 20.707228, 18.407957] 
+		var longitude = [72.877426, 73.856255, 72.978088, 74.570389, 74.740677, 79.088860, 75.352478, 76.180870, 77.002960, 76.576767]
+		
+		// Initialise the Map to point to Maharashtra by default.
+		function initMap(){
+			// Map options
+			var options ={
+				zoom:7,
+				center:{lat:19.837426, lng:75.903622}		
+			}
+
+			// New Map
+			var map = new google.maps.Map(document.getElementById('map'), options);	
+
+			// Add Markers to the Map
+			var i;
+			for (i = 1; i <= latitude.length; i++){
+				var marker = new google.maps.Marker({
+					position:{lat:latitude[i-1], lng:longitude[i-1]},
+					map:map,
+					title: districts[i-1],
+					icon:"icons/"+i+".png"
+				});	
+			}
+		}
+	</script>
+
+	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi59lrA5-ETGIyZ8U5oAap0yN_dxQsR7g&callback=initMap"
+	type="text/javascript">
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<div class="book_apointment_area">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-8">
+                <h2 style="text-align: left;">List of Scheduled Volunteers at Hotspot Zone</h2>
+                <br>
+                <br>
+                <button class="boxed-btn3" onclick = "document.location = '/mumbai'">Mumbai</button>
+                <button class="boxed-btn3" onclick = "document.location = '/mulund'">Mulund</button>
+                <button class="boxed-btn3" onclick = "document.location = '/khar'">Khar</button>
+            </div>
+            <div class="col-4">
+                <h2 style="text-align: center;">ALERTS</h2>
+                <ol>
+                    <li>Wash Hands Regularly for atleast 20 seconds to effectively kill all the germs.</li>
+                </ol>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row justify-content-end">
+            <div class="col">
+                <h2 style="text-align: left;">List of Screened Doctors to Nearest Hospitals</h2>
+                <br>
+                <br>
+                <button class="boxed-btn3" onclick="document.location = '/hospitals'">Click</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

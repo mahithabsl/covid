@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+{% block title %}
+
+
+    <section class="blog-details-section spad">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-7 "><!--left-blog-pad-->
+                    <div class="popup_box">  <!--bd-text-->
+                        <div class="comment-form">
+                            <div class="popup_inner">
+
+<br>
+<br>
+<br>
+                            <h3>
+                                <span>become a blood donor</span>
+                                </h3>
+                            <form action="/reg_donor" method= "POST">
+                                <div class="row">
+                                    <div class="col-xl-9">
+                                        <input type="text" name="username" placeholder="Name">
+                                    </div>
+                                    <div class="col-xl-9">
+                                        <input type="text" name="phone" placeholder="Phone Number">
+                                    </div>
+                                    <div class="col-xl-9">
+                                        <input type="text" name="age" placeholder="Age">
+                                    </div>
+                                    <div class="col-xl-9">
+                                        <input type="text" name="weight" placeholder="Weight">
+                                    </div>
+                                    <div class="col-xl-12">
+                                    <div class="col-1">
+                                        <h6>Gender: </h6>
+                                        <input type="radio" name="gender" value="M">Male
+                                        <input type="radio" name="gender" value="F">Female
+                                        <input type="radio" name="gender" value="O">Other
+                                    </div>
+                                    </div>
+                                    <div class="col-xl-9">
+                                        <input type="text" name="bloodgroup" placeholder="Blood Group">
+                                    </div>
+                                    <div class="col-xl-9">
+                                        <textarea name="address" placeholder="Address"></textarea>
+                                    </div>
+                                    <div class="col-xl-4" >
+                                        <br>
+                                        <button type="submit" class="boxed-btn3">Register</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="fs-logo">
+                        <div class="logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

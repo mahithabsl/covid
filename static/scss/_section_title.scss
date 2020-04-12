@@ -1,0 +1,42 @@
+.section_title{
+    h3{
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 48px;
+        color: $heading-color;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 15px;
+        @media #{$mobile_device} {
+            font-size: 30px;
+            line-height: 36px;
+        }
+        @media #{$tablet_device} {
+            font-size: 36px;
+            line-height: 42px;
+        }
+        br{
+            @media #{$mobile_device} {
+                display: none;
+            }
+        }
+    }
+    p{
+        font-size: 16px;
+        color: $gray-color;
+        line-height: 30px;
+        margin-bottom: 0;
+        br{
+            @media #{$mobile_device} {
+                display: none;
+            }
+        }
+
+    }
+}
+.mb-100{
+    margin-bottom: 100px;
+    @media #{$mobile_device} {
+        margin-bottom: 40px;
+    }
+}

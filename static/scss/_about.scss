@@ -1,0 +1,107 @@
+.welcome_clicnic_area{
+    padding-top: 200px;
+    padding-bottom: 230px;
+    @media #{$mobile_device}{
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    @media #{$tablet_device}{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .welcome_thumb{
+        position: relative;
+        z-index: 0;
+        .thumb_1{
+            left: 0;
+            margin-left: 0px;
+            position: relative;
+            margin-left: 30px;
+            &::before{
+                background: #e0fbff;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                content: '';
+                z-index: -1;
+                @include border-radius(5px);
+                left: -30px;
+                bottom: -30px;
+            }
+            img{
+                width: 100%;
+                @include border-radius(5px);
+                @media #{$mobile_device} {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .welcome_docmed_info{
+        padding-left: 40px;
+        @media #{$mobile_device} {
+            padding-left: 0;
+            margin-top: 80px;
+        }
+        @media #{$tablet_device} {
+            padding-left: 0;
+            margin-top: 100px;
+        }
+        h3{
+            font-weight: 300;
+            font-size: 50px;
+            margin-bottom: 40px;
+            line-height: 60px;
+            span{
+                display: block;
+                color: #1a1a1a;
+                font-weight: 700;
+            }
+            @media #{$mobile_device}{
+                font-size: 30px;
+                line-height: 1.2;
+            }
+            br{
+                @media #{$mobile_device} {
+                    display: none;
+                }
+            }
+        }
+        p{
+            font-size: 16px;
+            color: #6b6a6a;
+            line-height: 28px;
+        }
+        ul{
+            margin-bottom: 46px;
+            margin-top: 20px;
+            li{
+                color: #1a1a1a;
+                font-size: 16px;
+                line-height: 44px;
+                position: relative;
+                padding-left: 40px;
+                @media #{$mobile_device} {
+                    line-height: 30px;
+                }
+                i{
+                    margin-right: 15px;
+                    color: #84dfff;
+                    font-size: 20px;
+                    position: absolute;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                    left: 0;
+                    @media #{$mobile_device}{
+                        top: 0px;
+                        @include transform(translateY(0%));
+                    }
+                }
+            }
+        }
+    }
+}
+
+  

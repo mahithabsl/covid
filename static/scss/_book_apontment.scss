@@ -1,0 +1,10 @@
+.book_apointment_area{
+    background-image: url(../img/banner/form_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 150px 0;
+    @media #{$mobile_device} {
+        padding: 80px 0;
+    }
+}
