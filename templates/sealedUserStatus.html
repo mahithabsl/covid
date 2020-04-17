@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/sealedUserStatus.css')}}">
+{% endblock %}
+
+{% block title %}
+
+<div class="quality_area">
+    <div class="container">
+            <div class="row justify-content-center">
+                <center><h1 style="font-family: 'Roboto';">Sealed User Status</h1></center>
+                <br><br><br><br>
+                <table id= "mySealedTable" class="table table-hover">
+                    <thead class="thead-dark">
+                        <th class="myTH">Id</th>
+                        <th class="myTH">User</th>
+                        <th class="myTH">Requirements</th>
+                        <th class="myTH">Emergency Supplies</th>
+                        <th class="myTH">Status</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Dheeraj Kapoor</td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">Biscuits</li>
+                                    <li class="mySealedLI">Chips</li>
+                                    <li class="mySealedLI">Bread</li>
+                                    <li class="mySealedLI">Milk</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">
+                                        First-Aid Kit
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Masks
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Sanitizer
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Medicines
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>Received</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Akshay Sahu</td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">Biscuits</li>
+                                    <li class="mySealedLI">Chips</li>
+                                    <li class="mySealedLI">Bread</li>
+                                    <li class="mySealedLI">Milk</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">
+                                        First-Aid Kit
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Masks
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Sanitizer
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Medicines
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>Not Received</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Amit Borkar</td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">Biscuits</li>
+                                    <li class="mySealedLI">Chips</li>
+                                    <li class="mySealedLI">Bread</li>
+                                    <li class="mySealedLI">Milk</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">
+                                        First-Aid Kit
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Masks
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Sanitizer
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Medicines
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>Not Received</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Aman Singh</td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">Biscuits</li>
+                                    <li class="mySealedLI">Chips</li>
+                                    <li class="mySealedLI">Bread</li>
+                                    <li class="mySealedLI">Milk</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">
+                                        First-Aid Kit
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Masks
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Sanitizer
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Medicines
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>Received</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Nishant Bhatt</td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">Biscuits</li>
+                                    <li class="mySealedLI">Chips</li>
+                                    <li class="mySealedLI">Bread</li>
+                                    <li class="mySealedLI">Milk</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li class="mySealedLI">
+                                        First-Aid Kit
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Masks
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Sanitizer
+                                    </li>
+                                    <li class="mySealedLI">
+                                        Medicines
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>Received</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+            </div>  
+    </div>
+</div>
+
+
+
+
+    
+
+ 
+{% endblock %}

@@ -11,9 +11,9 @@
                     <div class="popup_box ">
                         <div class="popup_inner">
                             <h3>
-                            <span>login</span>
+                            <span>Admin login</span>
                             </h3>
-                            <form action="/checkadmin" method="post">
+                            <form action="/checkadmin" onsubmit="return success()" method="post">
                                 <div class="row">
                                     
                                     <div class="col-xl-9">
@@ -21,7 +21,7 @@
                                     </div>
                                     
                                     <div class="col-xl-9">
-                                        <input type="text" name="password" placeholder="Password">
+                                        <input type="password" name="password" placeholder="Password">
                                     </div>
                                    
                                     <div class="col-xl-4">
@@ -72,6 +72,12 @@
     </div>
     <!-- Emergency_contact end -->
     <!-- footer start -->
-
+<script>
+function success() {           
+            alert("Successfully logged in as admin!")
+            return true;
+}
+</script>
+    
    
 {% endblock %}

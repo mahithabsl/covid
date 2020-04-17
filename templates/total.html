@@ -1,0 +1,1349 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/total.css')}}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock%}
+
+{% block title %}
+<div class="book_apointment_area">
+    <div class="container">
+            <div class="row justify-content-end">
+				
+
+
+
+
+
+				<div class="responsive">
+
+					<form method="POST" action="">
+			
+						<div class="container">
+			
+			
+			
+							<div class="jumbotron jumbotron-fluid">
+			
+								<div class="container">
+			
+									<h1 class="display-6" style="text-align: center;">
+										<font size="12"><b style="color: #032f69;  font-family: 'Calibri';">Your Area is at <span style="color: #db3630;">High Risk</span></b></font>
+									</h1>
+			
+									<p class="lead"> </p>
+									
+								</div>
+			
+							</div>
+			
+			
+			
+							<!-- <div  style="margin-top:5%">
+			
+			 <h1><b style="color: #032f69;  font-family: 'Arial';">Your Area is at High Risk</b></h1>
+			
+			</div>
+			
+			<br>
+			
+			<br>     -->
+			
+							<br>
+			
+			
+			
+							<div class="container">
+			
+								<div class="row">
+			
+									<div class="col-sm-5 col-md-6">
+			
+			
+			
+										<!-- INSTRUCTIONS -->
+			
+										<div class="card">
+			
+											<h4 class="card-header"><b style="color: #032f69;  font-family: 'Roboto'; ">Instructions</b></h4>
+			
+											<div class="card-body">
+			
+												<!-- <h5 class="card-title"></h5> -->
+			
+												<p class="card-text" style="font-family: 'calibri'; font-weight: 500; color: black;">
+			
+													Authorities Working at your area:
+			
+													<br><br>
+			
+													Police assisstance:
+			
+												</p>
+			
+												<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+			
+											</div>
+			
+										</div>
+			
+									</div>
+			
+			
+			
+			
+			
+									<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+			
+			
+			
+										<div class="card">
+			
+											<h4 class="card-header"><b style="color: #032f69;  font-family: 'Roboto';">Guidelines</b></h4>
+			
+											<div class="card-body">
+			
+												<!-- <h5 class="card-title"></h5> -->
+			
+												<p class="card-text" style="font-family: 'calibri'; font-weight: 500; color: black;">
+			
+													Kuch toh guidelines
+			
+													<br>
+			
+													<br><br>
+			
+												</p>
+			
+												<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+			
+			
+			
+											</div>
+			
+										</div>
+			
+			
+			
+									</div>
+			
+								</div>
+			
+			
+			
+			
+			
+	  <!-- column 3-->
+	
+	  <div class="row">
+	
+		<div class="col-sm-6 col-md-5 col-lg-6">
+	
+	
+	
+	<br>
+	
+	
+	
+		<div class="card" style="width: 33rem;">
+	
+	  <div class="card-body">
+	
+		<h5 class="card-title">  <font size="5" style="font-family: 'Roboto';">Dont Panic We are here to deliver you at your door step</font></h5>
+	
+		  <br>
+	
+	 <h6 class="card-subtitle mb-2 text-muted"> <font size="4">Necessary Items:</font></h6>
+	
+		<p class="card-text">
+	
+	
+	
+	 
+	
+	
+	
+	
+	
+		<div class="form-group">
+	
+					<input placeholder="Description" id="desc" class="form-control" type="text" name="">
+	
+				</div>
+	
+				<div class="form-group">
+	
+					<input placeholder="Amount" id="amount" class="form-control" type="text" name="">
+	
+				</div>
+	
+				<div class="form-group">
+	
+					<input placeholder="Value" id="value" class="form-control" type="text" name="">
+	
+				</div>
+	
+				<span id="btnUpdate" style="display: none">
+	
+					<span id="inputIdUpdate"> </span>
+	
+					<button onclick="updateData();" class="btn btn-default">Save</button>
+	
+					<button onclick="resetForm();" class="btn btn-default">Cancel</button>
+	
+				</span>
+	
+				<span id="btnAdd">
+	
+					<button  onclick="addData();" class="btn btn-default">Add</button>
+	
+					<button  onclick="resetForm();" class="btn btn-default">Reset</button>	
+	
+					<button  onclick="deleteList();" class="btn btn-default">Delete List</button>						
+	
+				</span>
+	
+				
+	
+			
+	
+			<div id="errors"></div>
+	
+			<table id="listTable" class="table">			    
+	
+			</table>	
+	
+		
+	
+	
+	
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+	
+			<div class="container">
+	
+				<h4 class="text-center text-success">Total: <span id="totalValue"> Rs. 0</span> </h4>
+	
+			</div>
+	
+		</nav>
+	
+		
+	
+	
+	
+		</p>
+	
+	
+	
+	  </div>
+	
+	</div>
+	
+		</div>
+	
+	
+	
+	<!-- column 4 -->
+	
+		<div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+	
+	
+	
+		<br>
+	
+		
+	
+		<div class="card" style="width: 33rem;">
+	
+	  <div class="card-body">
+	
+		<h5 class="card-title">  <font size="5" style="font-family: 'Roboto';">Emergency</font></h5>
+	
+	 
+	
+		<p class="card-text">
+	
+			<i class="fas fa-phone-alt"></i> &nbsp;<font size="4">Call for medical help</font><br>
+	
+		<i class="fas fa-syringe"></i>&nbsp;<font size="4">Any medicine required</font>
+	
+	
+	
+	<br><br>
+	
+		<h6 class="card-subtitle mb-2 text-muted"> <font size="4">Necessary Medicines:</font></h6>
+	
+	
+	
+	<!-- Cart -->
+	
+	
+	
+	
+	
+	<div class="form-group">
+	
+					<input placeholder="Description" id="desc1" class="form-control" type="text" name="">
+	
+				</div>
+	
+				<div class="form-group">
+	
+					<input placeholder="Amount" id="amount1" class="form-control" type="text" name="">
+	
+				</div>
+	
+				<div class="form-group">
+	
+					<input placeholder="Value" id="value1" class="form-control" type="text" name="">
+	
+				</div>
+	
+				<span id="btnUpdate1" style="display: none">
+	
+					<span id="inputIdUpdate1"> </span>
+	
+					<button onclick="updateData1();" class="btn btn-default">Save</button>
+	
+					<button onclick="resetForm1();" class="btn btn-default">Cancel</button>
+	
+				</span>
+	
+				<span id="btnAdd1">
+	
+					<button  onclick="addData1();" class="btn btn-default">Add</button>
+	
+					<button  onclick="resetForm1();" class="btn btn-default">Reset</button>	
+	
+					<button  onclick="deleteList1();" class="btn btn-default">Delete List</button>						
+	
+				</span>
+	
+				
+	
+			
+	
+			<div id="errors1"></div>
+	
+			<table id="listTable1" class="table">			    
+	
+			</table>	
+	
+		
+	
+	
+	
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+	
+			<div class="container">
+	
+				<h4 class="text-center text-success">Total: <span id="totalValue1"> Rs. 0 </span> </h4>
+	
+			</div>
+	
+		</nav>
+	
+	
+	
+	
+	
+	<!-- cart ends -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</p>
+	
+	
+	
+	
+	
+	
+	
+	  </div>
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	  </div>
+	
+	  </div>
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	</div>
+	
+	
+	
+	 
+	
+	
+	
+	<script>
+	
+	
+	
+	
+	
+	
+	
+	var list1 = [
+	
+		{
+	
+			"desc1": "rice", 
+	
+			"amount1": "1",
+	
+			"value1": "5.40"
+	
+		}, 
+	
+		{
+	
+			"desc1": "beer", 
+	
+			"amount1": "12",
+	
+			"value1": "1.99"
+	
+		}, 
+	
+		{
+	
+			"desc1": "meat", 
+	
+			"amount1": "1",
+	
+			"value1": "15.00"
+	
+		}
+	
+	
+	
+	];
+	
+	
+	
+	
+	
+	function getTotal1(list1){
+	
+		var total = 0 ; 
+	
+		for (var key in list1){
+	
+			total += list1[key].value * list1[key].amount ; 
+	
+		}
+	
+		document.getElementById('totalValue1').innerHTML = formatValue1(total);	
+	
+	}
+	
+	
+	
+	
+	
+	function setList1(list1){
+	
+	
+	
+	var table = '<thead>' +
+	
+				  '<tr>'+
+	
+					'<th>Description</th>'+
+	
+					'<th>Amount</th>'+
+	
+					'<th>Value</th>'+
+	
+					'<th></th>'+
+	
+				'  </tr>'+
+	
+				'</thead>'+
+	
+				'<tbody>' ; 
+	
+	for(var key in list1){
+	
+		table += '<tr>' +
+	
+					'<td>'+ formatDesc1(list1[key].desc) + '</td>' +
+	
+					'<td>'+ formatAmount1(list1[key].amount) + '</td>' +
+	
+					'<td>'+ formatValue1(list1[key].value) + '</td>' +
+	
+					'<td> <button class="btn btn-default" onclick="setUpdate1('+key+');" >Edit</button> <button class="btn btn-default" onclick="deleteData1('+key+');" >Delete</button></td>' +
+	
+				  '</tr>' ;
+	
+	}
+	
+	table+= '</tbody>' ;
+	
+	getTotal1(list1) ;
+	
+	saveListStorage1(list1) ;
+	
+	document.getElementById('listTable1').innerHTML = table ;
+	
+	}
+	
+	
+	
+	
+	
+	function formatDesc1(desc){
+	
+	
+	
+	var str = desc.toLowerCase();
+	
+	str = str.charAt(0).toUpperCase() + str.slice(1);
+	
+	return str ; 
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	function formatValue1(value){
+	
+		var str = parseFloat(value).toFixed(2) + "" ;
+	
+		str = str.replace(".", ".") ; 
+	
+		str = "Rs. "+ str ; 
+	
+		return str ; 
+	
+	}
+	
+	
+	
+	
+	
+	function formatAmount1(amount){
+	
+		return parseInt(amount) ;
+	
+	}
+	
+	
+	
+	function addData1(){
+	
+		if(!validation1()){
+	
+			return ;
+	
+		}
+	
+		var desc = document.getElementById('desc1').value ; 
+	
+		var value = document.getElementById('value1').value ; 
+	
+		var amount = document.getElementById('amount1').value ;
+	
+	
+	
+		list1.unshift({"desc1":desc , "value1":value , "amount1":amount});
+	
+		setList1(list1); 
+	
+	}
+	
+	
+	
+	
+	
+	function setUpdate1(id){
+	
+		var obj = list1[id] ;
+	
+		document.getElementById('desc1').value  = obj.desc ; 
+	
+		document.getElementById('amount1').value  = obj.amount ; 
+	
+		document.getElementById('value1').value  = obj.value ; 
+	
+	
+	
+		document.getElementById('btnUpdate1').style.display = "inline-block"; 
+	
+		document.getElementById('btnAdd1').style.display = "none"; 
+	
+	
+	
+		document.getElementById('inputIdUpdate1').innerHTML = '<input type="hidden" id="idUpdate1" value="'+id+'">' ; 
+	
+	}
+	
+	
+	
+	function resetForm1(){
+	
+		
+	
+		document.getElementById('desc1').value  = ""; 
+	
+		document.getElementById('amount1').value  = "" ; 
+	
+		document.getElementById('value1').value  = "" ; 
+	
+		document.getElementById('inputIdUpdate1').innerHTML = "" ;
+	
+	
+	
+		document.getElementById('btnUpdate1').style.display = "none"; 
+	
+		document.getElementById('btnAdd1').style.display = "inline-block"; 
+	
+	}
+	
+	
+	
+	
+	
+	function updateData1(){
+	
+		var id = document.getElementById('idUpdate1').value ; 
+	
+		var desc = document.getElementById('desc1').value ; 
+	
+		var amount = document.getElementById('amount1').value ; 
+	
+		var value = document.getElementById('value1').value ; 
+	
+	
+	
+		list1[id] = {
+	
+			'desc1': desc, 
+	
+			'amount1': amount, 
+	
+			'value1': value 
+	
+		}
+	
+		resetForm1();
+	
+		setList1(list1);
+	
+	}
+	
+	
+	
+	function deleteData1(id){
+	
+		if(confirm('Delete this item ?')){
+	
+			if(id === list1.length-1){
+	
+				list1.pop();
+	
+			}else if(id == 0){
+	
+				list1.shift(); 
+	
+			}else{
+	
+				var arrInicial = list1.slice(0, id);
+	
+				var arrFinal = list1.slice(id+1);
+	
+				list1 = arrInicial.concat(arrFinal) ; 
+	
+			}
+	
+	
+	
+			setList1(list1) ;
+	
+		}
+	
+	}
+	
+	
+	
+	
+	
+	function validation1(){
+	
+		var desc = document.getElementById('desc1').value ;
+	
+		var amount = document.getElementById('amount1').value ;
+	
+		var value = document.getElementById('value1').value ;
+	
+		var errors = "" ;
+	
+	
+	
+		if(desc == ""){
+	
+			errors+= "<p>Fill out description</p>" ; 
+	
+		}
+	
+		if(amount == ""){
+	
+			errors+= "<p>Fill out amount</p>" ; 
+	
+		}else if(amount != parseInt(amount)){
+	
+			errors+= "<p>Fill out a valid amount</p>" ; 
+	
+		}
+	
+		if(value == ""){
+	
+			errors+= "<p>Fill out value</p>" ; 
+	
+		}else if(value != parseFloat(value)){
+	
+			errors+= "<p>Fill out a valid value</p>" ; 
+	
+		}
+	
+	
+	
+		if(errors != ""){
+	
+			document.getElementById('errors1').innerHTML = "<h4>Errors: </h4>"+ errors ;
+	
+			document.getElementById('errors1').style.display = "block" ;
+	
+			document.getElementById('errors1').style.backgroundColor = "#ff00006b" ;
+	
+			document.getElementById('errors1').style.borderRadius = "13px" ;
+	
+			document.getElementById('errors1').style.padding = "10px" ;
+	
+			document.getElementById('errors1').style.margin = "10px" ;
+	
+	
+	
+			return 0 ;
+	
+		}else{
+	
+			document.getElementById('errors1').style.display = "none" ;
+	
+			return 1 ;
+	
+		}
+	
+	
+	
+	}
+	
+	
+	
+	function deleteList1(){
+	
+		if(confirm('Delete the entire list ?')){
+	
+			list1 = [] ; 
+	
+			setList1(list1) ;
+	
+		}
+	
+	} 
+	
+	
+	
+	
+	
+	function saveListStorage1(list1){
+	
+		
+	
+		var jsonStr = JSON.stringify(list1) ;
+	
+		localStorage.setItem("list1", jsonStr) ;
+	
+	}
+	
+	
+	
+	function initListStorage1(){
+	
+		var testList = localStorage.getItem('list1') ; 
+	
+		if(testList){
+	
+			list1 = JSON.parse(testList) ;
+	
+		}
+	
+		setList1(list1) ;
+	
+	}
+	
+	
+	
+	
+	
+	initListStorage1() ;
+	
+	
+	
+	
+	
+	
+	
+	function setConfig1(){
+	
+	
+	
+	
+	
+	var texts = {
+	
+		"title": "", 
+	
+	}; 
+	
+	
+	
+	
+	
+	document.title = texts.title ; 
+	
+	document.getElementById('navTitle1').innerHTML = texts.title ;  
+	
+	}
+	
+	
+	
+	setConfig1();
+	
+	</script>
+	
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<script>
+	
+	
+	
+	
+	
+	var list = [
+	
+		{
+	
+			"desc": "rice", 
+	
+			"amount": "1",
+	
+			"value": "5.40"
+	
+		}, 
+	
+		{
+	
+			"desc": "beer", 
+	
+			"amount": "12",
+	
+			"value": "1.99"
+	
+		}, 
+	
+		{
+	
+			"desc": "meat", 
+	
+			"amount": "1",
+	
+			"value": "15.00"
+	
+		}
+	
+	
+	
+	];
+	
+	
+	
+	
+	
+	function getTotal(list){
+	
+		var total = 0 ; 
+	
+		for (var key in list){
+	
+			total += list[key].value * list[key].amount ; 
+	
+		}
+	
+		document.getElementById('totalValue').innerHTML = formatValue(total);	
+	
+	}
+	
+	
+	
+	function setList(list){
+	
+	
+	
+		var table = '<thead>' +
+	
+					  '<tr>'+
+	
+						'<th>Description</th>'+
+	
+						'<th>Amount</th>'+
+	
+						'<th>Value</th>'+
+	
+						'<th></th>'+
+	
+					'  </tr>'+
+	
+					'</thead>'+
+	
+					'<tbody>' ; 
+	
+		for(var key in list){
+	
+			table += '<tr>' +
+	
+						'<td>'+ formatDesc(list[key].desc) + '</td>' +
+	
+						'<td>'+ formatAmount(list[key].amount) + '</td>' +
+	
+						'<td>'+ formatValue(list[key].value) + '</td>' +
+	
+						'<td> <button class="btn btn-default" onclick="setUpdate('+key+');" >Edit</button> <button class="btn btn-default" onclick="deleteData('+key+');" >Delete</button></td>' +
+	
+					  '</tr>' ;
+	
+		}
+	
+		table+= '</tbody>' ;
+	
+		getTotal(list) ;
+	
+		saveListStorage(list) ;
+	
+		document.getElementById('listTable').innerHTML = table ;
+	
+	}
+	
+	
+	
+	function formatDesc(desc){
+	
+	
+	
+		var str = desc.toLowerCase() ;
+	
+		str = str.charAt(0).toUpperCase() + str.slice(1);
+	
+		return str ; 
+	
+	}
+	
+	
+	
+	function formatValue(value){
+	
+		var str = parseFloat(value).toFixed(2) + "" ;
+	
+		str = str.replace(".", ".") ; 
+	
+		str = "Rs. "+ str ; 
+	
+		return str ; 
+	
+	}
+	
+	
+	
+	function formatAmount(amount){
+	
+		return parseInt(amount) ;
+	
+	}
+	
+	
+	
+	function addData(){
+	
+		if(!validation()){
+	
+			return ;
+	
+		}
+
+	
+		var desc = document.getElementById('desc').value ; 
+	
+		var value = document.getElementById('value').value ; 
+	
+		var amount = document.getElementById('amount').value ;
+	
+	
+	
+		list.unshift({"desc":desc , "value":value , "amount":amount});
+	
+		setList(list); 
+		return true;
+	
+	}
+	
+	
+	
+	function setUpdate(id){
+	
+		var obj = list[id] ;
+	
+		document.getElementById('desc').value  = obj.desc ; 
+	
+		document.getElementById('amount').value  = obj.amount ; 
+	
+		document.getElementById('value').value  = obj.value ; 
+	
+	
+	
+		document.getElementById('btnUpdate').style.display = "inline-block"; 
+	
+		document.getElementById('btnAdd').style.display = "none"; 
+	
+	
+	
+		document.getElementById('inputIdUpdate').innerHTML = '<input type="hidden" id="idUpdate" value="'+id+'">' ; 
+	
+	}
+	
+	
+	
+	function resetForm(){
+	
+		
+	
+		document.getElementById('desc').value  = ""; 
+	
+		document.getElementById('amount').value  = "" ; 
+	
+		document.getElementById('value').value  = "" ; 
+	
+		document.getElementById('inputIdUpdate').innerHTML = "" ;
+	
+	
+	
+		document.getElementById('btnUpdate').style.display = "none"; 
+	
+		document.getElementById('btnAdd').style.display = "inline-block"; 
+	
+	}
+	
+	
+	
+	function updateData(){
+	
+		var id = document.getElementById('idUpdate').value ; 
+	
+		var desc = document.getElementById('desc').value ; 
+	
+		var amount = document.getElementById('amount').value ; 
+	
+		var value = document.getElementById('value').value ; 
+	
+	
+	
+		list[id] = {
+	
+			'desc': desc, 
+	
+			'amount': amount, 
+	
+			'value': value  
+	
+		}
+	
+		resetForm();
+	
+		setList(list);
+	
+	}
+	
+	
+	
+	function deleteData(id){
+	
+		if(confirm('Delet this item ?')){
+	
+			if(id === list.length-1){
+	
+				list.pop();
+	
+			}else if(id == 0){
+	
+				list.shift(); 
+	
+			}else{
+	
+				var arrInicial = list.slice(0, id);
+	
+				var arrFinal = list.slice(id+1);
+	
+				list = arrInicial.concat(arrFinal) ; 
+	
+			}
+	
+	
+	
+			setList(list) ;
+	
+		}
+	
+	}
+	
+	
+	
+	function validation(){
+	
+		var desc = document.getElementById('desc').value ;
+	
+		var amount = document.getElementById('amount').value ;
+	
+		var value = document.getElementById('value').value ;
+	
+		var errors = "" ;
+	
+	
+	
+		if(desc == ""){
+	
+			errors+= "<p>Fill out description</p>" ; 
+	
+		}
+	
+		if(amount == ""){
+	
+			errors+= "<p>Fill out amount</p>" ; 
+	
+		}else if(amount != parseInt(amount)){
+	
+			errors+= "<p>Fill out a valid amount</p>" ; 
+	
+		}
+	
+		if(value == ""){
+	
+			errors+= "<p>Fill out value</p>" ; 
+	
+		}else if(value != parseFloat(value)){
+	
+			errors+= "<p>Fill out a valid value</p>" ; 
+	
+		}
+	
+	
+	
+		if(errors != ""){
+	
+			document.getElementById('errors').innerHTML = "<h4>Errors: </h4>"+ errors ;
+	
+			document.getElementById('errors').style.display = "block" ;
+	
+			document.getElementById('errors').style.backgroundColor = "#ff00006b" ;
+	
+			document.getElementById('errors').style.borderRadius = "13px" ;
+	
+			document.getElementById('errors').style.padding = "10px" ;
+	
+			document.getElementById('errors').style.margin = "10px" ;
+	
+	
+	
+			return 0 ;
+	
+		}else{
+	
+			document.getElementById('errors').style.display = "none" ;
+	
+			return 1 ;
+	
+		}
+	
+	
+	
+	}
+	
+	
+	
+	function deleteList(){
+	
+		if(confirm('Delete the entire list ?')){
+	
+			list = [] ; 
+	
+			setList(list) ;
+	
+		}
+	
+	} 
+	
+	
+	
+	//salva a lista no local storage
+	
+	function saveListStorage(list){
+	
+		//transforma a list em um json string
+	
+		var jsonStr = JSON.stringify(list) ;
+	
+		localStorage.setItem("list", jsonStr) ;
+	
+	}
+	
+	
+	
+	//recupera a lista do local storage
+	
+	function initListStorage(){
+	
+		var testList = localStorage.getItem('list') ; 
+	
+		if(testList){
+	
+			list = JSON.parse(testList) ;
+	
+		}
+	
+		setList(list) ;
+	
+	}
+	
+	
+	
+	
+	
+	initListStorage() ;
+	
+	
+	
+	
+	
+	
+	
+	// Função de configuração
+	
+	function setConfig(){
+	
+	
+	
+	//seta um objeto
+	
+	var texts = {
+	
+		"title": "", 
+	
+	}; 
+	
+	
+	
+	//seta o titulo do documento com o atributo title do objeto de cima
+	
+	document.title = texts.title ; 
+	
+	document.getElementById('navTitle').innerHTML = texts.title ;  
+	
+	}
+	
+	
+	
+	setConfig() ;
+	
+	</script>
+	
+		
+	
+	
+	
+	   
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 
+            </div>  
+    </div>
+</div>
+{% endblock %}

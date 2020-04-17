@@ -24,7 +24,11 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/slicknav.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    {% block css %}{% endblock %}
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+   
+
+
 </head>
 
 <body>
@@ -34,6 +38,7 @@
 
 
     <!-- header-start -->
+
     <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
@@ -60,14 +65,14 @@
                                                     <ul class="submenu">
                                                         <li><a href="/adminlogin">Admin</a></li>
                                                         <li><a href="/login">User</a></li>
-                                                        <li><a href="/vol">Yodha</a></li>
+                                                        <li><a href="/yodha">Yodha</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="#">Help4Society <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
                                                         <li><a href="/vol">Be a volunteer</a></li>
                                                         <li><a href="/bloodform">Donate blood?</a></li>
-                                                         <li><a href="/donate">Donate funds</a></li>
+                                                         <li><a href="/donate">Donate money</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="/about">About</a></li>

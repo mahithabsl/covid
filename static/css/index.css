@@ -1,0 +1,16 @@
+.myImg{
+    width: 100%;
+    height: 100%;
+}
+
+.myTRR, .myTDD, .myTablee{
+    border: 1px solid black;
+    text-align: center;
+}
+.myTDD{
+    width: 100px;
+}
+.myIndexLI {
+    list-style: square outside none;
+    padding-bottom: 10px;
+}

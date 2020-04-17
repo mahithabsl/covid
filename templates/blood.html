@@ -1,5 +1,10 @@
 
 {% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/blood.css')}}">
+{% endblock %}
 {% block title %}
 
 
@@ -15,9 +20,9 @@
 <br>
 <br>
                             <h3>
-                                <span>become a blood donor</span>
+                                <span>Become a blood donor</span>
                                 </h3>
-                            <form action="/reg_donor" method= "POST">
+                            <form action="/reg_donor" method= "POST" onsubmit="return success()">
                                 <div class="row">
                                     <div class="col-xl-9">
                                         <input type="text" name="username" placeholder="Name">
@@ -29,21 +34,28 @@
                                         <input type="text" name="age" placeholder="Age">
                                     </div>
                                     <div class="col-xl-9">
+                                            <br>
+                                            <h5>Gender:</h5>
+                                            <br>
+                                            <label class="containerradio">Male
+                                              <input type="radio" checked="checked" name="radio">
+                                              <span class="checkmarkradio"></span>
+                                            </label>
+
+                                            <label class="containerradio">Female
+                                              <input type="radio" name="radio">
+                                              <span class="checkmarkradio"></span>
+                                            </label>
+                                    </div>
+                                    <div class="col-xl-9">
                                         <input type="text" name="weight" placeholder="Weight">
                                     </div>
-                                    <div class="col-xl-12">
-                                    <div class="col-1">
-                                        <h6>Gender: </h6>
-                                        <input type="radio" name="gender" value="M">Male
-                                        <input type="radio" name="gender" value="F">Female
-                                        <input type="radio" name="gender" value="O">Other
-                                    </div>
-                                    </div>
+                                    
                                     <div class="col-xl-9">
                                         <input type="text" name="bloodgroup" placeholder="Blood Group">
                                     </div>
                                     <div class="col-xl-9">
-                                        <textarea name="address" placeholder="Address"></textarea>
+                                        <textarea name="address" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Address"></textarea>
                                     </div>
                                     <div class="col-xl-4" >
                                         <br>
@@ -75,4 +87,11 @@
             </div>
         </div>
     </footer>
+    <script>
+function success() {           
+            alert("Thank you for registering!")
+            return true;
+}
+</script>
+    
 {% endblock %}

@@ -1,7 +1,6 @@
-from flask import Flask, render_template,redirect,request,url_for,session
+from flask import Flask, render_template,redirect,request,url_for,session, json
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
 
 app = Flask(__name__)
 
@@ -31,6 +30,7 @@ class volunteerlist(db.Model):
     choice3=db.Column(db.String(20), nullable=False)
     field = db.Column(db.String(20), nullable=False)
     idcard=db.Column(db.String(20), nullable=False)
+    # slot=db.Column(db.String(30), nullable=False)
 
 class donors(db.Model):
         
@@ -40,8 +40,13 @@ class donors(db.Model):
     phone = db.Column(db.String(20), nullable=False,primary_key=True)
     bloodgroup=db.Column(db.String(20), nullable=False)
     weight = db.Column(db.String(20), nullable=False)
-    gender=db.Column(db.String(20), nullable=False)
-    
+
+class contactus(db.Model):
+    email = db.Column(db.String(20), primary_key=True)
+    username = db.Column(db.String(30), nullable=False)
+    subject = db.Column(db.String(12), nullable=False)
+    query = db.Column(db.String(120), nullable=False)
+
 
 
 @app.route("/")
@@ -64,7 +69,7 @@ def login():
         
         login = users.query.filter_by(username=username, password=password).first()
         if login is not None:
-            return redirect(url_for("user"))
+            return redirect(url_for("total"))
     return render_template("user_login.html")
 
 @app.route("/register", methods=["GET", "POST"])
@@ -73,15 +78,24 @@ def register():
         username = request.form['username']
         phone = request.form['phone']
         password = request.form['password']
-
         register = users(username = username, phone=phone, password = password)
         db.session.add(register)
         db.session.commit()
 
-        return redirect(url_for("user"))
+        return redirect(url_for("login"))
 
     return render_template("register.html")
 
+
+
+@app.route('/medical')
+def medical(): 
+    return render_template("medical.html")
+
+
+@app.route('/sealeduser')
+def sealeduser(): 
+    return render_template("sealedUserStatus.html")
 
 
 @app.route('/adminlogin')
@@ -91,14 +105,84 @@ def adminlogin():
 
 @app.route('/admin')
 def admin(): 
-    return render_template("adminPage.html")
+    return render_template("adminPageNew.html")
 
 
 @app.route('/mumbai')
-def mumbai(): 
-    return render_template("mumbai.html")
+def mumbai():
+    query1 = volunteerlist.query.filter_by(choice1 = 'Mumbai').all()
+    db.session.commit()
+    # print(query1)
+    l1 = [i for i in query1]
+    q = len(l1) 
+    if q<2:
+        query2 = volunteerlist.query.filter_by(choice2 = 'Mumbai').limit(2-q).all()
+        l2 = [i for i in query2]
+        for i in l2:
+            l1.append(i)
 
+    if len(l1) < 2:
+        query3 = volunteerlist.query.filter_by(choice3 = 'Mumbai').limit(2-len(l1)).all()
+        l3 = [i for i in query3]
+        for i in l3:
+            l1.append(i)
+            
+    avg = len(l1) / 3
+    out = []
+    last = 0.0
+    while last < len(l1):
+        out.append(l1[int(last):int(last + avg)])
+        last += avg
 
+    morning = out[0] #slot1
+    afternoon = out[1] #slot2
+    evening = out[2] #slot3 
+    # print(json.dumps)
+    print(morning)
+    print(afternoon)
+    print(evening)
+    # print("s")
+    res1=res2=res3=[]
+    for i in morning:
+        ph=str(i)
+        ph=(ph[15:-1] )
+        userdetail=volunteerlist.query.filter_by(phone=ph).first()
+        result=userdetail.__dict__
+        username=(result['username'])
+        phone=(result['phone'])
+        email=(result['email'])
+        slot=(result['slot'])
+        res1.append((username+" "+phone+" "+email))
+        print(res1)
+
+    for i in afternoon:
+        ph=str(i)
+        ph=(ph[15:-1] )
+        userdetail=volunteerlist.query.filter_by(phone=ph).first()
+        result=userdetail.__dict__
+        username=(result['username'])
+        phone=(result['phone'])
+        email=(result['email'])
+        slot=(result['slot'])
+       
+        res2.append((username+" "+phone+" "+email))
+        
+        print(res2)
+
+    for i in evening:
+        ph=str(i)
+        ph=(ph[15:-1] )
+        userdetail=volunteerlist.query.filter_by(phone=ph).first()
+        result=userdetail.__dict__
+        username=(result['username'])
+        phone=(result['phone'])
+        email=(result['email'])
+        slot=(result['slot'])
+        print(res3)
+
+        res3.append((username+" "+phone+" "+email))
+
+    return render_template("mumbai.html",morning=res1[:5],afternoon=res2[5:],evening=res3[4:])
 @app.route('/mulund')
 def mulund(): 
     return render_template("mulund.html")
@@ -115,6 +199,10 @@ def hospitals():
 
 
 
+@app.route('/yodhaloggedin')
+def yodhaloggedins(): 
+    return render_template("yodhaloggedin.html")
+
 @app.route("/checkadmin",methods = ['GET', 'POST'])
 def checkadmin():
 	if request.method == 'POST':
@@ -125,9 +213,14 @@ def checkadmin():
 			return redirect(url_for("admin"))
 	return render_template('adminlogin')
 
-@app.route("/user")
-def user():
-    return render_template('user.html')
+
+@app.route("/crosslist")
+def crosslist():
+    return render_template('crosslist.html')
+
+@app.route("/total")
+def total():
+    return render_template('total.html')
 
 
 @app.route("/yodha")
@@ -157,7 +250,7 @@ def volunteer():
         db.session.add(register)
         db.session.commit()
 
-        return redirect(url_for("user"))
+        return redirect(url_for("yodhaloggedin"))
 
     return render_template("vol")
 
@@ -170,13 +263,13 @@ def blooddonor():
         phone = request.form["phone"]
         weight=request.form["weight"]
         bloodgroup = request.form["bloodgroup"]
-        gender=request.form["gender"]
+        # gender=request.form["gender"]
         
-        register = donors(username=username,age=age,address=address,phone=phone,weight=weight,bloodgroup=bloodgroup,gender=gender)
+        register = donors(username=username,age=age,address=address,phone=phone,weight=weight,bloodgroup=bloodgroup)
         db.session.add(register)
         db.session.commit()
 
-        return redirect(url_for("user"))
+        return redirect(url_for("index"))
 
     return render_template("bloodform")
 
@@ -188,6 +281,24 @@ def bloodform():
 @app.route("/donate")
 def donate():
     return render_template('donate.html')
+
+
+@app.route("/contactus", methods = ['GET', 'POST'])
+def contactUs():
+    if(request.method=='POST'):
+        '''Add entry to the database'''
+        query = request.form['query']
+        email = request.form['email']
+        username = request.form['username']
+        subject = request.form['subject']
+        entry = contactus(username=username,query=query,subject =subject,email=email)
+        db.session.add(entry)
+        db.session.commit()
+        return redirect(url_for("/contact"))
+    return render_template("contact")
+
+
+
 
 
 app.run(debug=True)

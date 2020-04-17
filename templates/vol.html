@@ -1,56 +1,74 @@
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/vol.css')}}">
 
+{% endblock%}
 {% extends "layout.html" %}
 {% block title %}
 
 
+<script type="text/javascript" src="../static/js/jspdf.min.js"></script>
     <section class="blog-details-section spad">
         <div class="container">
             <div class="row  justify-content-end">
                 <div class="col-lg-7">
                     <div class="popup_box">
                         <div class="comment-form">
-                            <div class="popup_inner">
+                            <div class="popup_inner" id="application">
                             <br>
                             <br>
                             <br>
                             <h3>
                                 <span>Volunteer your services</span>
                                 </h3>
-                            <form action="/reg_volunteer" method="POST" enctype="multipart/form-data">
+                            <form action="/reg_volunteer" onsubmit="return gene()" method="POST" name="myForm" id="myForm" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-xl-9">
-                                        <input type="text" name="username" placeholder="Name">
+                                        <input type="text" id="name" name="username" placeholder="Name">
                                     </div>
                                     <div class="col-xl-9">
-                                        <input type="text" name="phone" placeholder="Phone Number">
+                                        <input type="text" id="phnumber" name="phone" placeholder="Phone Number">
                                     </div>
                                     <div class="col-xl-9">
                                         <input type="text" name="email" placeholder="Email ID">
                                     </div>
                                     <div class="col-xl-9">
-                                        <textarea name="address" placeholder="Address"></textarea>
+                                        <textarea name="address" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Address"></textarea>
                                     </div>
 
 
                                     <div class="col-xl-9">
                                         <br>
                                         <h5>Top 3 hotspots you would prefer volunteering in:</h5><br>
-                                        <input type="text" name="choice1" placeholder="First choice">
-                                        <input type="text" name="choice2" placeholder="Second Choice">
-                                        <input type="text" name="choice3" placeholder="Third Choice">
+                                        <input type="text" id="ch1" name="choice1" placeholder="First choice">
+                                        <input type="text" id="ch2" name="choice2" placeholder="Second Choice">
+                                        <input type="text" id="ch3" name="choice3" placeholder="Third Choice">
                                     </div>
-
+                                    <br>
+                                    <div class="col-xl-9">
+                                            <label class="checkcontainer">Morning
+                                              <input type="checkbox" checked="checked">
+                                              <span class="checkmark"></span>
+                                            </label>
+                                            <label class="checkcontainer">Afternoon
+                                              <input type="checkbox">
+                                              <span class="checkmark"></span>
+                                            </label>
+                                            <label class="checkcontainer">Evening
+                                              <input type="checkbox">
+                                              <span class="checkmark"></span>
+                                            </label>
+                                    </div>
 
                                     <div class="col-xl-9">
                                         <br>
                                         <h5>Field you would like to contribute in:</h5><br>
-                                            <select name="field">
-                                                <option disabled selected value> Choose field </option>
-                                                <option value="healthcare">Healthcare</option>
-                                                <option value="transport">Transport</option>
-                                                <option value="courier">Courier</option>
-                                                <option value="patrol">Patrol</option>
-                                                <option value="gen_aid">General Aid</option>
+                                            <select name="field" style="width: 150px;height: 40px;">
+                                                <option disabled selected value> &nbsp;&nbsp;Choose field </option>
+                                                <option value="healthcare">&nbsp;&nbsp;Healthcare</option>
+                                                <option value="transport">&nbsp;&nbsp;Transport</option>
+                                                <option value="courier">&nbsp;&nbsp;Courier</option>
+                                                <option value="patrol">&nbsp;&nbsp;Patrol</option>
+                                                <option value="gen_aid">&nbsp;&nbsp;General Aid</option>
                                             </select>
                                     </div>
 
@@ -60,13 +78,30 @@
                                         <input type="file" name="idcard"> 
                                         <!-- <input type="submit" value="Upload Image" name="submit"> -->
                                     </div>
+                                     <p>
+<div class="col-xl-9">
+<canvas id='new' width='320' height='240' style='border:1px solid #000;'>
+</canvas>
+<div>
+    <div>
+</p>
+<input type='button' style="color: #59adfe" class="col-md-4" id='upd' value='Update' onClick=gene();>
+<div >   
+    <button id='sav' style="margin-right: 10px;" type="button" class="btn btn-default btn-sm" onClick=save();>
+    <span class="glyphicon glyphicon-floppy-disk"></span> Save my ID
+    </button>
+    <a href="" style="color: #59adfe" id="download" download="myid.jpeg"></a>
+</div> </div>
+                                
+    
 
 
-                                    <div class="col-md-4">
-                                        <button type="submit" class="boxed-btn3" name="submit">Register</button>
+
+                                    <div class="col-md-6 " style="margin-top: 20;margin-left: -15px">
+                                        <button   type="submit" class="boxed-btn3" name="submit">Register</button>
                                     </div>
                                 </div>
-                            </form>
+                            </form>    
                         </div>
                         </div>
                     </div>
@@ -74,5 +109,149 @@
             </div>
         </div>
     </section>
-    <!-- Blog Details Section End -->
+   
+    <script>
+
+
+   function init(){
+var c=document.getElementById('new')
+var co=c.getContext('2d')
+grs=co.createLinearGradient(150,243,170,75)
+grs.addColorStop(1,'#FBF3F1')
+grs.addColorStop(0,'white')
+co.fillStyle=grs
+co.fillRect(0.5,75.5,319,164.5)
+
+gr=co.createLinearGradient(150,243,170,75)
+gr.addColorStop(1,'#59adfe')
+gr.addColorStop(0,'white')
+co.fillStyle=gr
+co.fillRect(0,0,150,73.5)
+
+grd=co.createLinearGradient(150,143,170,75)
+grd.addColorStop(1,'#59adfe')
+grd.addColorStop(0,'white')
+co.fillStyle=grd
+co.fillRect(150,0,169.5,73.5)
+
+co.fillStyle='white'
+co.fill()
+
+co.moveTo(0,75)
+co.lineTo(320,75)
+
+co.font='35px Arial'
+co.fillText('Covid Yoddha',45,35)
+
+co.font='20px Arial'
+co.fillText('Volunteer',115,65)
+
+co.beginPath()
+}
+
+
+init()
+
+function gene(){
+var n = document.getElementById("name").value;
+var ph = document.getElementById("phnumber").value;
+var ch1 = document.getElementById("ch1").value;
+var ch2 = document.getElementById("ch2").value;
+var ch3 = document.getElementById("ch3").value;
+
+c=document.getElementById('new')
+co=c.getContext('2d')
+co.clearRect(0,0,320,240)
+init()
+
+co.font='25px Arial'
+co.fillStyle='#000000'
+co.fillText('Name  :      '+ph,50,110)
+
+co.font='25px Arial'
+co.fillStyle='#000000'
+co.fillText('Phone  :      '+ph,50,135)
+
+co.font='25px Arial'
+co.fillStyle='#000000'
+co.fillText('Area 1  :      '+ch1,50,160)
+
+co.font='25px Arial'
+co.fillStyle='#000000'
+co.fillText('Area 2  :      '+ch2,50,185)
+
+co.font='25px Arial'
+co.fillStyle='#000000'
+co.fillText('Area 3  :     '+ch3,50,210)
+}
+function save(){
+datau=c.toDataURL('image/jpeg;base64;')//.replace("image/png", "image/octet-stream");
+//window.location.href=datau
+anchor=document.getElementById('download')
+
+anchor.href=datau
+anchor.innerHTML='Download'
+  alert("Thank you for registering as our volunteer !")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    function generateID(){
+        var pdf = new jsPDF('p','pt','letter')
+        source=$('#application')[0] 
+    
+        specialElementHandlers = {
+            '#bypassme': function (element, renderer) {
+                return true
+            }
+        };
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+    
+        pdf.fromHTML(
+        source, 
+        margins.left,
+        margins.top, { 
+            'width': margins.width, 
+            'elementHandlers': specialElementHandlers
+        },
+    
+        function (dispose) {
+            pdf.save('Test.pdf');
+        }, margins);
+        return true;
+    }
+*/
+</script>
+    
+
+
 {% endblock %}

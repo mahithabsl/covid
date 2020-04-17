@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/sealedUser.css')}}">
+{% endblock %}
+
+{% block title %}
+<div class="quality_area">
+    <h1 class="" style="text-align: center;">
+                    <font size="12"><b style="color: #032f69;  font-family: 'Calibri';">Today's time table</b></font>
+                </h1>
+                 <h2 class="" style="text-align: center;">
+                    <b style="color: #032f69;  font-family: 'Calibri';">Name: Sankar</b>
+                </h2>
+                 <h3 class="" style="text-align: center;">
+                    <b style="color: #032f69;  font-family: 'Calibri';">Time slot: Evening</b>
+                </h3>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+			
+            <div class="container">
+
+                <h1 class="" style="text-align: center;">
+                    <font size="12"><b style="color: #032f69;  font-family: 'Calibri';">Volunteer task</b></font>
+                </h1>
+                 
+
+                <p class="lead"> </p>
+                
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+        <!-- <center><h1>Sealed User</h1></center> -->
+            </div> 
+            <br><br><br><br>
+            <div class="row">
+                <h2>Your Requirements</h2>
+            </div>
+            <br>
+            <br>
+            <br> 
+            <div class="row">
+                <div class="col-sm-4" >
+                    <div class="card" id="card1" style="background-color: aliceblue;">
+                        <h3 class="card-header text-center " style="font-family: 'Roboto Slab';"></h3>
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted" >
+                            <font style="color: rgb(3, 74, 207); font-size: larger; font-weight: 500;" ></font>
+                                Food Supplies
+                            </font>
+                            </h6>
+                            <ol>
+                                <li class="myUserLI">
+                                    Biscuits
+                                </li>
+                                <li class="myUserLI">
+                                    Chips
+                                </li>
+                                <li class="myUserLI">
+                                Bread
+                                </li>
+                                <li class="myUserLI">
+                                Milk
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 align-items-center" style="padding-top: 80px ;">
+                    <center><button class="boxed-btn3" onclick="myFunction()" id="button1">Delivered</button></center>
+                </div>
+            </div>
+            <br>
+            <hr width="800px">
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card" id="card2" style="background-color: aliceblue;">
+                        <h3 class="card-header text-center " style="font-family: 'Roboto Slab';"></h3>
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted" >
+                            <font style="color: rgb(3, 74, 207); font-size: larger; font-weight: 500;" ></font>
+                                Emergency Supplies
+                            </font>
+                            </h6>
+                            <ol>
+                                <li class="myUserLI">
+                                    First-Aid Kit
+                                </li>
+                                <li class="myUserLI">
+                                    Masks
+                                </li>
+                                <li class="myUserLI">
+                                    Sanitizer
+                                </li>
+                                <li class="myUserLI">
+                                    Medicines
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 align-items-center" style="padding-top: 80px ;">
+                    <center><button class="boxed-btn3" onclick="myFunction2()" id="button2">Delivered</button></center>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script>  
+
+function myFunction() {
+  document.getElementById("card1").style.backgroundColor = "lightgreen";
+}
+function myFunction2() {
+  document.getElementById("card2").style.backgroundColor = "lightgreen";
+}
+
+</script>
+{% endblock %}

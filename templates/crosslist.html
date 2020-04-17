@@ -1,0 +1,482 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/crosslist.css')}}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+{% endblock%}
+
+{% block title %}
+<div class="quality_area">
+    <div class="container">
+            <div class="row justify-content-end">
+				
+
+
+
+
+
+				<div class="responsive">
+
+					<form method="POST" action="">
+			
+						<div class="container">
+			
+			
+			
+							<div class="jumbotron jumbotron-fluid">
+			
+								<div class="container">
+			
+									<h1 class="display-6" style="text-align: center;">
+										<font size="12"><b style="color: #032f69;  font-family: 'Calibri';">Your Area is at <span style="color: #db3630;">High Risk</span></b></font>
+									</h1>
+			
+									<p class="lead"> </p>
+									
+								</div>
+			
+							</div>
+			
+			
+			
+							<!-- <div  style="margin-top:5%">
+			
+			 <h1><b style="color: #032f69;  font-family: 'Arial';">Your Area is at High Risk</b></h1>
+			
+			</div>
+			
+			<br>
+			
+			<br>     -->
+			
+							<br>
+			
+			
+			
+							<div class="container">
+			
+								<div class="row">
+			
+									<div class="col-sm-5 col-md-6">
+			
+			
+			
+										<!-- INSTRUCTIONS -->
+			
+										<div class="card" >
+			
+											<h4 class="card-header"><b style="color: #032f69;  font-family: 'Roboto'; ">Instructions</b></h4>
+			
+											<div class="card-body">
+			
+												<!-- <h5 class="card-title"></h5> -->
+			
+												<p class="card-text" style="font-family: 'calibri'; font-weight: 500; color: black;">
+			
+													Authorities Working at your area:
+			
+													<br><br>
+			
+													Police assisstance:
+			
+												</p>
+			
+												<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+			
+											</div>
+			
+										</div>
+			
+									</div>
+			
+			
+			
+			
+			
+									<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+			
+			
+			
+										<div class="card">
+			
+											<h4 class="card-header"><b style="color: #032f69;  font-family: 'Roboto';">Guidelines</b></h4>
+			
+											<div class="card-body">
+			
+												<!-- <h5 class="card-title"></h5> -->
+			
+												<p class="card-text" style="font-family: 'calibri'; font-weight: 500; color: black;">
+			
+													Kuch toh guidelines
+			
+													<br>
+			
+													<br><br>
+			
+												</p>
+			
+												<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+			
+			
+			
+											</div>
+			
+										</div>
+			
+			
+			
+									</div>
+			
+								</div>
+			
+			
+			
+			
+			
+								<!-- column 3-->
+			
+								<div class="row">
+			
+									<div class="col-sm-6 col-md-5 col-lg-6">
+			
+			
+			
+										<br>
+			
+			
+			
+										<div class="card" style="width: 33rem;">
+			
+											<div class="card-body">
+			
+												<h5 class="card-title">
+													<font size="5" style="font-family: 'Roboto';">Dont Panic We are here to deliver you at your door step</font>
+												</h5>
+			
+												<br>
+			
+												<h6 class="card-subtitle mb-2 text-muted">
+													<font size="4" style="font-family: 'Roboto';">Necessary Items:</font>
+												</h6>
+			
+												<p class="card-text">
+			
+			
+			
+			
+			
+													<ul id="myUL">
+														<li class="classLI">Hit the gym</li>
+
+														<li class="classLI">Meet George</li>
+			
+														<li class="classLI">Buy eggs</li>
+			
+														<li class="classLI">Read a book</li>
+			
+														<li class="classLI">Organize office</li>			
+													</ul>
+			
+			
+			
+													<div id="myDIV" class="header">
+			
+														<input type="text" id="myInput" placeholder="Add Item">
+			
+														<span onclick="newElement()" class="addBtn">Add</span>
+			
+													</div>
+			
+			
+			
+			
+			
+												</p>
+			
+			
+			
+											</div>
+			
+										</div>
+			
+									</div>
+			
+			
+			
+									<!-- column 4 -->
+			
+									<div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+			
+			
+			
+										<br>
+			
+			
+			
+										<div class="card" style="width: 33rem;">
+			
+											<div class="card-body">
+			
+												<h5 class="card-title">
+													<font size="5" style="font-family: 'Roboto';">Emergency</font>
+												</h5>
+			
+												<br>
+			
+												<h6 class="card-subtitle mb-2 text-muted"></h6>
+			
+												<p class="card-text">
+			
+													<i class="fas fa-phone-alt"></i> &nbsp;<font size="4" style="font-family: 'Roboto';">Call for medical help
+													</font><br>
+			
+													<i class="fas fa-syringe"></i> &nbsp;<font size="4"  style="font-family: 'Roboto';">Any medicine required</font>
+			
+													<br>
+			
+													<ul id="myUL2">	
+														<li class="classLI">Hit the gym</li>
+
+														<li class="classLI">Meet George</li>
+			
+														<li class="classLI">Buy eggs</li>
+			
+														<li class="classLI">Read a book</li>
+			
+														<li class="classLI">Organize office</li>	
+													</ul>
+			
+			
+			
+													<div id="myDIV2" class="header">
+			
+														<input type="text" id="myInput2" placeholder="Add Item">
+			
+														<span onclick="newElement2()" class="addBtn2">Add</span>
+			
+													</div>
+			
+			
+			
+													<!-- <button type="button" onclick="new3()">Click Me!</button>
+			
+			
+			
+			<ul id="myUL3">
+			
+			  <li>Hit the gym</li>
+			
+			  <li>Hit the gym</li>
+			
+			 
+			
+			</ul> -->
+			
+			
+			
+			
+			
+												</p>
+			
+			
+			
+			
+			
+			
+			
+											</div>
+			
+										</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+									</div>
+			
+								</div>
+			
+							</div>
+			
+			
+			
+			
+			
+			
+			
+						</div>
+			
+					</form>
+			
+				</div>
+			
+			
+			
+			
+			
+			
+			
+				<script>
+			
+					// Create a "close" button and append it to each list item
+			
+					// var myNodelist = document.getElementsByTagName("LI");
+					var myNodelist = document.getElementsByClassName("classLI");
+			
+					var i;
+			
+					for (i = 0; i < myNodelist.length; i++) {
+			
+						var span = document.createElement("SPAN");			
+						var txt = document.createTextNode("\u00D7");			
+						span.className = "close";
+			
+						span.appendChild(txt);
+			
+						myNodelist[i].appendChild(span);
+			
+					}
+			
+			
+			
+					// Click on a close button to hide the current list item
+			
+					var close = document.getElementsByClassName("close");
+			
+					var i;
+			
+					for (i = 0; i < close.length; i++) {
+			
+						close[i].onclick = function () {
+			
+							var div = this.parentElement;
+			
+							div.style.display = "none";
+			
+						}
+			
+					}
+			
+			
+			
+			
+			
+					// Create a new list item when clicking on the "Add" button
+			
+					function newElement() {
+			
+						var li = document.createElement("li");
+			
+						var inputValue = document.getElementById("myInput").value;
+			
+						var t = document.createTextNode(inputValue);
+			
+						li.appendChild(t);
+			
+						if (inputValue === '') {
+			
+							alert("You must write something!");
+			
+						} else {
+			
+							document.getElementById("myUL").appendChild(li);
+			
+						}
+			
+						document.getElementById("myInput").value = "";
+			
+			
+			
+						var span = document.createElement("SPAN");
+			
+						var txt = document.createTextNode("\u00D7");
+			
+						span.className = "close";
+			
+						span.appendChild(txt);
+			
+						li.appendChild(span);
+			
+			
+			
+						for (i = 0; i < close.length; i++) {
+			
+							close[i].onclick = function () {
+			
+								var div = this.parentElement;
+			
+								div.style.display = "none";
+			
+							}
+			
+						}
+			
+					}		
+				</script>
+			
+				<script>			
+			
+					// Create a new list item when clicking on the "Add" button
+			
+					function newElement2() {
+			
+						var li = document.createElement("li");
+			
+						var inputValue = document.getElementById("myInput2").value;
+			
+						var t = document.createTextNode(inputValue);
+			
+						li.appendChild(t);
+			
+						if (inputValue === '') {
+			
+							alert("You must write something!");
+			
+						} else {
+			
+							document.getElementById("myUL2").appendChild(li);
+			
+						}
+			
+						document.getElementById("myInput2").value = "";
+			
+			
+			
+						var span = document.createElement("SPAN");
+			
+						var txt = document.createTextNode("\u00D7");
+			
+						span.className = "close";
+			
+						span.appendChild(txt);
+			
+						li.appendChild(span);
+			
+			
+			
+						for (i = 0; i < close.length; i++) {
+			
+							close[i].onclick = function () {
+			
+								var div = this.parentElement;
+			
+								div.style.display = "none";
+			
+							}
+			
+						}
+			
+					}
+				</script>
+			
+            </div>  
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,11 @@
+.mySealedLI {
+    list-style: none;
+    text-align: center;
+}   
+
+.myTH{
+    text-align: center;
+}
+#mySealedTable > td{
+    text-align: center;
+}

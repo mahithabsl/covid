@@ -1,8 +1,56 @@
 
 {% extends "layout.html" %}
 {% block title %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    
+
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "You are in a sealed area";
+}
+</script>
+    <script >
+        
+    var x = document.getElementById("output");
+
+    function getLocation() {
+  if (navigator.geolocation) {
+    console.log('supporting');
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    console.log('not supporting');
+  }
+}
+
+function showPosition(position) {
+      
+    console.log(position.coords.latitude);
+     console.log(position.coords.longitude);
+
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+
+
+
+
+    </script>
 
     <div class="book_apointment_area">
         <div class="container">
@@ -13,7 +61,13 @@
                             <h3>
                             <span>Signup</span>
                             </h3>
-                            <form action="/register" method="post">
+                             <div class="col-xl-6">
+                                <button style="margin-bottom: 20px;margin-left: -10px; " id="loc" class="boxed-btn3" onClick="myFunction()">Use current location</button>
+                            <p id="demo" style="color: #59adfe;font-size: 20px"></p>
+
+                            </div>
+                            <div id="output"></div>
+                            <form action="/register" method="post" onsubmit="return success()" >
                                 <div class="row">
                                     
                                     <div class="col-xl-9">
@@ -24,8 +78,8 @@
                                         <input type="text" name="phone" placeholder="Phone number ">
                                     </div>
                                     
-                                    <div class="col-xl-9">
-                                        <input type="text" name="password" placeholder="Password">
+                                    <div class="col-xl-9" >
+                                        <input type="password" name="password" placeholder="Password">
                                     </div>
                                    
                                     <div class="col-xl-4">
@@ -84,6 +138,12 @@
     </div>
     <!-- Emergency_contact end -->
     <!-- footer start -->
+     <script>
+function success() {           
+            alert("Sing up successful!")
+            return true;
+}
+</script>
 
    
 {% endblock %}

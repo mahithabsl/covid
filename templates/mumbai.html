@@ -4,8 +4,83 @@
 <div class="book_apointment_area">
     <div class="container">
             <div class="row justify-content-end">
-                <h1>List of volunteers is:- </h1>  
-            </div>  
+                <h1>Morning</h1>
+                <ol> 
+				<!-- For loop logic of jinja template -->
+			{% for i in morning %}
+  		
+			<h6>{{i}}</h6>
+			<!-- {% if loop.index%4==0 %}
+			<br>
+				
+			{% endif %} -->
+
+			{% endfor %}
+
+				
+				
+				 
+            </div>
+
+  
+
+             
+            
+    </div>
+</div>
+
+<div class="book_apointment_area">
+    <div class="container">
+            <div class="row justify-content-end">
+                <h1>Afternoon</h1>
+                <ol> 
+				<!-- For loop logic of jinja template -->
+			{% for i in afternoon %}
+  		
+			<h6>{{i}}</h6>
+			<!-- {% if loop.index%4==0 %}
+			<br>
+				
+			{% endif %} -->
+
+			{% endfor %}
+
+				
+				
+				 
+            </div>
+
+  
+
+             
+            
+    </div>
+</div>
+<div class="book_apointment_area">
+    <div class="container">
+            <div class="row justify-content-end">
+                <h1>Evening</h1>
+                <ol> 
+				<!-- For loop logic of jinja template -->
+			{% for i in evening %}
+  		
+			<h6>{{i}}</h6>
+			<!-- {% if loop.index%4==0 %}
+			<br>
+				
+			{% endif %} -->
+
+			{% endfor %}
+
+				
+				
+				 
+            </div>
+
+  
+
+             
+            
     </div>
 </div>
 {% endblock %}

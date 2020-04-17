@@ -1,0 +1,296 @@
+
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/adminPageNew.css')}}">
+{% endblock %}
+{% block title %}
+
+    <!-- slider_area_start -->
+
+    <!-- slider_area_end -->
+
+    <!-- welcome_clicnic_area_start -->
+    <div class="welcome_clicnic_area" >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <img class = "myImg" src="{{url_for('static',filename='plots/generate_origheatmap.png')}}" alt="">
+                </div>
+                <div class="col-md-4">
+                    <p>
+                        <table class="myTablee">
+                            <tr class="myTRR">
+                              <td class="myTDD">0 - 100</td>
+                              <td class="myTDD" style="background-color: #fff0e1;"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">100 - 200</td>
+                              <td class="myTDD" style="background-color: #fdcf9f"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">200 - 300</td>
+                              <td class="myTDD" style="background-color: #fb8735"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">300 - 400</td>
+                              <td class="myTDD" style="background-color: #de4f05"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD"> > 400</td>
+                              <td class="myTDD" style="background-color: #963003"></td>
+                            </tr>
+                          </table>
+                          <div class="text-danger h3" role="alert">
+                              <br>
+                            Mumbai is a Hotspot Zone.
+                          </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr width="850px">
+    <div class="welcome_clicnic_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <img class = "myImg" src="{{url_for('static',filename='plots/generate_predheatmap.png')}}" alt="">
+                </div>
+                <div class="col-md-4">
+                    <p>
+                        <table class="myTablee">
+                            <tr class="myTRR">
+                              <td class="myTDD">0 - 100</td>
+                              <td class="myTDD" style="background-color: #fedecf;"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">100 - 200</td>
+                              <td class="myTDD" style="background-color: #fcb499"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">200 - 300</td>
+                              <td class="myTDD" style="background-color: #fb7959"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">300 - 400</td>
+                              <td class="myTDD" style="background-color: #ee3a2c"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">400 - 500</td>
+                              <td class="myTDD" style="background-color: #ba1419"></td>
+                            </tr>
+                            <tr class="myTRR">
+                                <td class="myTDD"> > 500</td>
+                                <td class="myTDD" style="background-color: #72020e"></td>
+                              </tr>
+                          </table>
+                          <div class="text-danger h3" role="alert">
+                              <br>
+                            Andheri would be entering the Hotspot Zone.
+                          </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <!--  <div class="welcome_clicnic_area" style="padding-bottom: 0px;">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-md-8">
+                  <img class = "myImg" src="{{url_for('static',filename='plots/casesindia.png')}}" alt="">
+              </div>
+              <div class="col-md-4" style="padding-bottom: 90px; font-family: 'Calibri';">
+                  <div class="text-dark h1" role="alert">
+                    <center style="font-family: 'Roboto';"><span style="color: #b739fa;">Cases</span> in India</center>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> --><!-- 
+  <hr width="850px"> -->
+<!--   <div class="welcome_clicnic_area" style="padding-bottom: 0px;">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-md-8">
+                  <img class = "myImg" src="{{url_for('static',filename='plots/deathindia.png')}}" alt="">
+              </div>
+              <div class="col-md-4" style="padding-bottom: 90px; font-family: 'Calibri';">
+                  <div class="text-dark h1" role="alert">
+                    <center style="font-family: 'Roboto';"><span style="color: #db3630;">Deaths</span> in India</center>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> -->
+  <hr width="850px">
+    <div class="welcome_clicnic_area" style="padding-top: 40px;">
+        <div class="container">
+            <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">We have done analysis of the following areas</h2>
+            <br>
+            <br>
+            <div class="row align-items-center">
+                <div class="col align-items-center">
+                    <img class = "myImg" src="{{url_for('static',filename='plots/Kalyan-Dombivli.png')}}" alt="">
+                    <p style="text-align: center; font-family: 'Roboto'; font-weight: 450;">Plot showcasing the growth trend in COVID-19 cases in Kalyan-Dombivli over a period of 15 days</p>
+                </div>
+                <div class="col">
+                    <img class = "myImg" src="{{url_for('static',filename='plots/Mumbai.png')}}" alt="">
+                    <p style="text-align: center; font-family: 'Roboto'; font-weight: 450;">Plot showcasing the growth trend in COVID-19 cases in Mumbai over a period of 15 days</p>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <img class = "myImg" src="{{url_for('static',filename='plots/Navi Mumbai.png')}}" alt="">
+                    <p style="text-align: center; font-family: 'Roboto'; font-weight: 450;">Plot showcasing the growth trend in COVID-19 cases in Navi Mumbai over a period of 15 days</p>
+                </div>
+                <div class="col">
+                    <img class = "myImg" src="{{url_for('static',filename='plots/Thane.png')}}" alt="">
+                    <p style="text-align: center; font-family: 'Roboto'; font-weight: 450;">Plot showcasing the growth trend in COVID-19 cases in Thane over a period of 15 days</p>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <img class = "myImg" src="{{url_for('static',filename='plots/wholeregion.png')}}" alt="">
+                    <p style="text-align: center; font-family: 'Roboto'; font-weight: 450;">Plot showcasing the growth trend in COVID-19 cases in the whole region over a period of 15 days</p>
+                </div>
+                <div class="col-3"></div>
+              </div>
+        </div>
+    </div>
+    <hr width="850px">
+    <div class="welcome_clicnic_area" style="padding-top: 40px;">
+        <div class="container">
+            <h3 style="text-align: center; font-family: 'Roboto';">Blood Donation Requests Map</h3>
+            <br>
+            <br>
+            <div class="row align-items-center">
+                <div class="col-md-8" id="map" style="height: 480px; position: relative; overflow: hidden;">
+                    
+                </div>
+                <div class="col-md-4">
+                    <p>
+                        <table class="myTablee">
+                            <tr class="myTRR">
+                              <td class="myTDD">0 - 100</td>
+                              <td class="myTDD" style="background-color: #fff0e1;"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">100 - 200</td>
+                              <td class="myTDD" style="background-color: #fdcf9f"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">200 - 300</td>
+                              <td class="myTDD" style="background-color: #fb8735"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD">300 - 400</td>
+                              <td class="myTDD" style="background-color: #de4f05"></td>
+                            </tr>
+                            <tr class="myTRR">
+                              <td class="myTDD"> > 400</td>
+                              <td class="myTDD" style="background-color: #963003"></td>
+                            </tr>
+                          </table>
+                          <div class="text-danger h3" role="alert">
+                              <br>
+                            Mumbai has the highest requests for blood donation.
+                          </div>
+                    </p>
+                </div>
+            </div>
+            <br><br><br><br>
+              <div class="w-100"></div>
+              <div class="row align-items-center">
+                <div class="col">                    
+                    <a href="/mumbai" class="boxed-btn3">Volunteers</a>
+                </div>
+                <div class="col align-items-center">                    
+                    <a href="/medical" class="boxed-btn3">Medicals</a>
+                </div>
+                <div class="col">                    
+                    <a href="/sealeduser" class="boxed-btn3">Sealed Area</a>
+                </div>
+              </div>
+        </div>
+    </div>
+<!-- welcome_clicnic_area_end -->
+
+
+    <!-- Emergency_contact end -->
+    <!-- footer start -->
+    <script>
+
+		// Districts along with their latitude and longitude
+		var districts = ['Mumbai', 'Mulund', 'Goregaon', 'Thane', 'Dadar', 'NAGPUR', 'AURANGABAD', 'BULDANA', 'AKOLA', 'LATUR']
+		var latitude = [19.076090, 19.174673, 19.154493, 19.218330, 19.019554, 21.146633, 19.901054, 20.536846, 20.707228, 18.407957] 
+		var longitude = [72.877426, 72.943108, 72.874664, 72.978088, 72.843733, 79.088860, 75.352478, 76.180870, 77.002960, 76.576767]
+
+        // Initialise the Map to point to Maharashtra by default.
+        
+		function initMap(){
+			// Map options
+			var options ={
+                zoom:11,
+                
+				center:{lat:19.117712, lng:72.882952}		
+			}
+
+			// New Map
+			var map = new google.maps.Map(document.getElementById('map'), options);	
+
+			// Add Markers to the Map
+			// var i;
+			// for (i = 1; i <= latitude.length; i++){
+			// 	var marker = new google.maps.Marker({
+			// 		position:{lat:latitude[i-1], lng:longitude[i-1]},
+			// 		map:map,
+			// 		title: districts[i-1],
+			// 		icon:"/static/icons/"+i+".png"
+			// 	});	
+            // }
+            var marker = new google.maps.Marker({
+					position:{lat:19.076090, lng:72.877426},
+					map:map,
+					title: districts[0],
+					icon:"/static/icons/moreThan400.png"
+            });	
+            marker.setOptions({'opacity': 0.5});
+            var marker = new google.maps.Marker({
+					position:{lat:19.174673, lng:72.943108},
+					map:map,
+					title: districts[1],
+					icon:"/static/icons/0to100.png"
+            });	
+            marker.setOptions({'opacity': 0.5});
+            var marker = new google.maps.Marker({
+					position:{lat:19.154493, lng:72.874664},
+					map:map,
+					title: districts[2],
+					icon:"/static/icons/100to200.png"
+            });
+            marker.setOptions({'opacity': 0.5});
+            var marker = new google.maps.Marker({
+					position:{lat:19.218330, lng:72.978088},
+					map:map,
+					title: districts[3],
+					icon:"/static/icons/200to300.png"
+            });
+            marker.setOptions({'opacity': 0.5});
+            var marker = new google.maps.Marker({
+					position:{lat:19.019554, lng:72.843733},
+					map:map,
+					title: districts[4],
+					icon:"/static/icons/300to400.png"
+			});	
+      marker.setOptions({'opacity': 0.5});
+		}
+	</script>
+
+	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi59lrA5-ETGIyZ8U5oAap0yN_dxQsR7g&callback=initMap"
+	type="text/javascript">
+	</script>
+
+   
+{% endblock %}
