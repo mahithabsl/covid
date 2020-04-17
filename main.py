@@ -286,7 +286,6 @@ def donate():
 @app.route("/contactus", methods = ['GET', 'POST'])
 def contactUs():
     if(request.method=='POST'):
-        '''Add entry to the database'''
         query = request.form['query']
         email = request.form['email']
         username = request.form['username']
