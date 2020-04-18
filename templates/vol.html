@@ -29,7 +29,7 @@
                                         <input type="text" id="phnumber" name="phone" placeholder="Phone Number">
                                     </div>
                                     <div class="col-xl-9">
-                                        <input type="text" name="email" placeholder="Email ID">
+                                        <input type="text" type="email" name="email" placeholder="Email ID">
                                     </div>
                                     <div class="col-xl-9">
                                         <textarea name="address" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Address"></textarea>
@@ -79,19 +79,20 @@
                                         <!-- <input type="submit" value="Upload Image" name="submit"> -->
                                     </div>
                                      <p>
-<div class="col-xl-9">
-<canvas id='new' width='320' height='240' style='border:1px solid #000;'>
-</canvas>
-<div>
-    <div>
-</p>
-<input type='button' style="color: #59adfe" class="col-md-4" id='upd' value='Update' onClick=gene();>
-<div >   
-    <button id='sav' style="margin-right: 10px;" type="button" class="btn btn-default btn-sm" onClick=save();>
-    <span class="glyphicon glyphicon-floppy-disk"></span> Save my ID
-    </button>
-    <a href="" style="color: #59adfe" id="download" download="myid.jpeg"></a>
-</div> </div>
+                                <div class="col-xl-9">
+                                <canvas id='new' width='320' height='240' style='border:1px solid #000;'>
+                                </canvas>
+                                <div>
+                                    <div>
+                                </p>
+                                <input type='button' style="color: #59adfe" class="col-md-4" id='upd' value='Update' onClick=gene();>
+                                <div >   
+                                    <button id='sav' style="margin-right: 10px;" type="button" class="btn btn-default btn-sm" onClick=save();>
+                                    <span class="glyphicon glyphicon-floppy-disk"></span> Save my ID
+                                    </button>
+                                    <a href="" style="color: #59adfe" id="download" download="myid.jpeg"></a>
+                                </div> 
+
                                 
     
 
@@ -166,7 +167,7 @@ init()
 
 co.font='25px Arial'
 co.fillStyle='#000000'
-co.fillText('Name  :      '+ph,50,110)
+co.fillText('Name  :      '+n,50,110)
 
 co.font='25px Arial'
 co.fillStyle='#000000'

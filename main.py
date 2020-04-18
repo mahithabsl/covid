@@ -52,6 +52,9 @@ class contactus(db.Model):
 @app.route("/")
 def home():
     return render_template('index.html')
+@app.route("/index")
+def index():
+    return render_template('index.html')
 
 @app.route("/about")
 def about():
@@ -183,14 +186,7 @@ def mumbai():
         res3.append((username+" "+phone+" "+email))
 
     return render_template("mumbai.html",morning=res1[:5],afternoon=res2[5:],evening=res3[4:])
-@app.route('/mulund')
-def mulund(): 
-    return render_template("mulund.html")
 
-
-@app.route('/khar')
-def khar(): 
-    return render_template("khar.html")
 
 
 @app.route('/hospitals')
@@ -250,9 +246,9 @@ def volunteer():
         db.session.add(register)
         db.session.commit()
 
-        return redirect(url_for("yodhaloggedin"))
+        return redirect(url_for("yodhaloggedins"))
 
-    return render_template("vol")
+    return render_template("vol.html")
 
 @app.route("/reg_donor",methods = ['GET', 'POST'])
 def blooddonor():
@@ -271,7 +267,7 @@ def blooddonor():
 
         return redirect(url_for("index"))
 
-    return render_template("bloodform")
+    return render_template("bloodform.html")
 
 
 
@@ -293,8 +289,8 @@ def contactUs():
         entry = contactus(username=username,query=query,subject =subject,email=email)
         db.session.add(entry)
         db.session.commit()
-        return redirect(url_for("/contact"))
-    return render_template("contact")
+        return redirect(url_for("index"))
+    return render_template("contact.html")
 
 
 
