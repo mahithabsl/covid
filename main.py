@@ -1,6 +1,8 @@
 from flask import Flask, render_template,redirect,request,url_for,session, json
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from locator import locate
+
 
 app = Flask(__name__)
 
@@ -30,7 +32,10 @@ class volunteerlist(db.Model):
     choice3=db.Column(db.String(20), nullable=False)
     field = db.Column(db.String(20), nullable=False)
     idcard=db.Column(db.String(20), nullable=False)
-    # slot=db.Column(db.String(30), nullable=False)
+    morning=db.Column(db.String(10), nullable=False)
+    afternoon=db.Column(db.String(10), nullable=False)
+    evening=db.Column(db.String(10), nullable=False)
+
 
 class donors(db.Model):
         
@@ -76,7 +81,12 @@ def login():
     return render_template("user_login.html")
 
 @app.route("/register", methods=["GET", "POST"])
+
 def register():
+
+
+    addr=locate()
+
     if request.method == "POST":
         username = request.form['username']
         phone = request.form['phone']
@@ -87,7 +97,7 @@ def register():
 
         return redirect(url_for("login"))
 
-    return render_template("register.html")
+    return render_template("register.html",addr=addr)
 
 
 
@@ -241,8 +251,19 @@ def volunteer():
         choice3=request.form["choice3"]
         field = request.form["field"]
         idcard=request.files["idcard"]
+        slot=request.form.getlist('slot')
+        morning=afternoon=evening=0
+        print(slot)
+        if '1' in slot:
+            morning=1   
+        if '2' in slot:
+            afternoon=1
+        if '3' in slot:
+            evening=1
+
         
-        register = volunteerlist(username=username,email=email,address=address,phone=phone,choice1=choice1,choice2=choice2,choice3=choice3,field=field,idcard=idcard.read())
+        print(morning,afternoon,evening)
+        register = volunteerlist(username=username,email=email,address=address,phone=phone,choice1=choice1,choice2=choice2,choice3=choice3,field=field,idcard=idcard.read(),morning=morning,afternoon=afternoon,evening=evening)
         db.session.add(register)
         db.session.commit()
 
