@@ -125,7 +125,7 @@ def admin():
 def mumbai():
     query1 = volunteerlist.query.filter_by(choice1 = 'Mumbai').all()
     db.session.commit()
-    # print(query1)
+    print(query1)
     l1 = [i for i in query1]
     q = len(l1) 
     if q<2:
@@ -151,9 +151,9 @@ def mumbai():
     afternoon = out[1] #slot2
     evening = out[2] #slot3 
     # print(json.dumps)
-    print(morning)
-    print(afternoon)
-    print(evening)
+    # print(morning)
+    # print(afternoon)
+    # print(evening)
     # print("s")
     res1=res2=res3=[]
     for i in morning:
@@ -164,7 +164,7 @@ def mumbai():
         username=(result['username'])
         phone=(result['phone'])
         email=(result['email'])
-        slot=(result['slot'])
+       
         res1.append((username+" "+phone+" "+email))
         print(res1)
 
@@ -176,7 +176,7 @@ def mumbai():
         username=(result['username'])
         phone=(result['phone'])
         email=(result['email'])
-        slot=(result['slot'])
+     
        
         res2.append((username+" "+phone+" "+email))
         
@@ -190,7 +190,7 @@ def mumbai():
         username=(result['username'])
         phone=(result['phone'])
         email=(result['email'])
-        slot=(result['slot'])
+       
         print(res3)
 
         res3.append((username+" "+phone+" "+email))
