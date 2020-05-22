@@ -9,7 +9,7 @@ def locate():
 	lon=g.lng
 
 	link = 'https://stevemorse.org/jcal/latlon.php'
-	driver = webdriver.Chrome(r"C:\users\mborra\chromedriver.exe")
+	driver = webdriver.Chrome(r"./chromedriver.exe")
 	driver.get(link)
 	seq = driver.find_elements_by_tag_name('iframe')
 	#print("No of frames present in the web page are: ", len(seq))
